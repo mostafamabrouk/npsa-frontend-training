@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import "./App.css";
 import AddNewList from "./components/AddNewList";
+import Item from "./components/Item";
 function App() {
   const [list, setList] = useState([]);
-  console.log(list);
   return (
     <div className="App">
       <header className="App-header">
@@ -12,7 +12,7 @@ function App() {
           <AddNewList onInsert={item => setList([...list, item])} />
           <ul>
             {list.map((item, index) => (
-              <li key={index}>{item}</li>
+              <Item key={index} item={item} />
             ))}
           </ul>
         </div>
