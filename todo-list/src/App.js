@@ -12,7 +12,14 @@ function App() {
           <AddNewList onInsert={item => setList([...list, item])} />
           <ul>
             {list.map((item, index) => (
-              <Item key={index} item={item} />
+              <Item
+                key={index}
+                item={item}
+                index={index}
+                onDelete={itemIndex => {
+                  setList(list.filter((_item, _index) => _index !== itemIndex));
+                }}
+              />
             ))}
           </ul>
         </div>
