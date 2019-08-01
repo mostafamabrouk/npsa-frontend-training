@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const Input = props => {
+const AddNewList = props => {
   const [value, setValue] = useState("test");
   console.log("input", value);
   return (
@@ -21,4 +21,4 @@ const Input = props => {
   );
 };
 
-export default Input;
+export default AddNewList;
