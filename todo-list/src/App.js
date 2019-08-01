@@ -19,6 +19,16 @@ function App() {
                 onDelete={itemIndex => {
                   setList(list.filter((_item, _index) => _index !== itemIndex));
                 }}
+                onItemUpdate={(index, newItem) => {
+                  setList(
+                    list.map((_item, _index) => {
+                      if (_index === index) {
+                        return newItem;
+                      }
+                      return _item;
+                    })
+                  );
+                }}
               />
             ))}
           </ul>
