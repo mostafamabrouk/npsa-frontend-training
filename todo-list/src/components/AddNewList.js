@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 
 const AddNewList = props => {
-  const [value, setValue] = useState("test");
-  console.log("input", value);
+  const [value, setValue] = useState("");
   return (
     <div>
       <input
@@ -12,6 +11,8 @@ const AddNewList = props => {
       />
       <button
         onClick={() => {
+          props.onInsert(value);
+          setValue("");
           console.log("we should add new item to our list", value);
         }}
       >
