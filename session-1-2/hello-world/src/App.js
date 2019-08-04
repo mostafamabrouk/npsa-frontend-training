@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import GettingStarted from './components/gettingStarted';
 import Counter from './components/counter';
+import DummyData from './components/dummyData';
 function App() {
   const names = [
     'Mostafa',
@@ -18,9 +19,10 @@ function App() {
         <p>
           Save <code>src/App.js</code> and save to reload.
         </p>
+        <DummyData />
         <Counter initialValue={5} />
         {names.map( (name, index) => {
-          return (<GettingStarted name={name} />)
+          return (<GettingStarted key={index} name={name} />)
         })}
         
         <a
