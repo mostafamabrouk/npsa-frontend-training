@@ -4,6 +4,7 @@ import AddNewList from "./components/AddNewList";
 import Item from "./components/Item";
 function App() {
   const [list, setList] = useState([]);
+
   return (
     <div className="App">
       <header className="App-header">

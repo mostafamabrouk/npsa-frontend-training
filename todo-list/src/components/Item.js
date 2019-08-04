@@ -1,8 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Item = props => {
   const [showPanel, setShowPanel] = useState(false);
   const [updatedItem, setUpdatedItem] = useState(props.item);
+
+  useEffect(() => {
+    console.log("Component has been mounted");
+  }, []);
+
+  useEffect(() => {
+    console.log("Component will be called on rerender");
+  });
+
+  useEffect(() => {
+    console.log('variable "updatedItem" has been update', updatedItem);
+  }, [updatedItem]);
 
   return (
     <li>
