@@ -1,7 +1,28 @@
 import React, { useState } from "react";
-import "./App.css";
+import "./App.scss";
 import AddNewList from "./components/AddNewList";
 import Item from "./components/Item";
+import styled from "styled-components";
+
+const UL = styled.ul`
+  margin: 0;
+  list-style: none;
+  padding: 0;
+  text-align: left;
+  li {
+    margin: 0 0 10px;
+    button {
+      opacity: 0;
+      transition: 0.2s all ease;
+    }
+    &:hover {
+      button {
+        opacity: 1;
+      }
+    }
+  }
+`;
+
 function App() {
   const [list, setList] = useState([]);
 
@@ -11,7 +32,7 @@ function App() {
         <h1>ToDo List</h1>
         <div>
           <AddNewList onInsert={item => setList([...list, item])} />
-          <ul>
+          <UL>
             {list.map((item, index) => (
               <Item
                 key={index}
@@ -32,7 +53,7 @@ function App() {
                 }}
               />
             ))}
-          </ul>
+          </UL>
         </div>
       </header>
     </div>
